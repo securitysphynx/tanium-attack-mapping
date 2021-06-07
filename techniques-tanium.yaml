@@ -1,0 +1,4894 @@
+version: 1.2
+file_type: technique-administration
+name: Tanium
+platform:
+- Windows
+- Linux
+- macOS
+techniques:
+- technique_id: T1562
+  technique_name: Impair Defenses
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Disabling Symantec Endpoint Protection'
+    - 'Tanium: Disable Security Events with MiniNT Registry Key'
+    - 'Tanium: Windows Firewall Disabled'
+    - 'Tanium: Registry Disable All .NET ETW Logging'
+    - 'Tanium: Logman Disable ETW Provider'
+    - 'Tanium: Manual Windows Update Removal'
+    - 'Tanium: Disable Tanium ETW'
+    - 'Tanium: Disable Windows Update'
+    - 'Tanium: Disabling Cisco AMP'
+    - 'Tanium: PWSH Exclusion Added to Defender'
+    - 'Tanium: Logman Disable All PowerShell Logging'
+    - 'Tanium: PowerShell Exclusion Added to Defender'
+    - 'Tanium: Disable PowerShell Session Event Tracing'
+    - 'Tanium: Disable Windows Defender'
+    - 'Tanium: Windows Defender Exclude EXE'
+    - 'Tanium: AMSI and Script Block Evasion'
+    - 'Tanium: Possible Anti-Malware Scan Interface (AMSI) Bypass Attempt'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Runas User Restriction Bypass'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1562.001
+  technique_name: 'Impair Defenses: Disable or Modify Tools'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Disabling Symantec Endpoint Protection'
+    - 'Tanium: Registry Disable All .NET ETW Logging'
+    - 'Tanium: Logman Disable ETW Provider'
+    - 'Tanium: Manual Windows Update Removal'
+    - 'Tanium: Disable Tanium ETW'
+    - 'Tanium: Disabling Cisco AMP'
+    - 'Tanium: Disable Windows Update'
+    - 'Tanium: PWSH Exclusion Added to Defender'
+    - 'Tanium: Logman Disable All PowerShell Logging'
+    - 'Tanium: PowerShell Exclusion Added to Defender'
+    - 'Tanium: Disable Windows Defender'
+    - 'Tanium: Windows Defender Exclude EXE'
+    - 'Tanium: AMSI and Script Block Evasion'
+    - 'Tanium: Possible Anti-Malware Scan Interface (AMSI) Bypass Attempt'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Runas User Restriction Bypass'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1562.006
+  technique_name: 'Impair Defenses: Indicator Blocking'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: AMSI and Script Block Evasion'
+    - 'Tanium: Registry Disable All .NET ETW Logging'
+    - 'Tanium: Logman Disable ETW Provider'
+    - 'Tanium: Logman Disable All PowerShell Logging'
+    - 'Tanium: Possible Anti-Malware Scan Interface (AMSI) Bypass Attempt'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059
+  technique_name: Command and Scripting Interpreter
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious System Management Automation Image Load'
+    - 'Tanium: Chrome Spawned CMD'
+    - 'Tanium: SyncAppVPublishingServer VBS Powershell Execution'
+    - 'Tanium: Dnscmd Remote DNS Server DLL Injection'
+    - 'Tanium: Command Quoted Directory Traversal Execution'
+    - 'Tanium: Chrome Spawned PowerShell'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: Binary Created by C# Command Line Compiler'
+    - 'Tanium: FTP Spawned by CMD'
+    - 'Tanium: Ieexec Download and Execution'
+    - 'Tanium: Non Smss Spawned SQL Client Tools PowerShell Session'
+    - 'Tanium: Chrome Spawned PWSH'
+    - 'Tanium: AdFind Object Group'
+    - 'Tanium: Uncommon RegSvcs & RegAsm Script Execution'
+    - 'Tanium: Windows Firewall Disabled'
+    - 'Tanium: Gfxdownloadwrapper Download File'
+    - 'Tanium: COM Hijack Persistence System Management Automation'
+    - 'Tanium: Windows Remote Shell Command Execution'
+    - 'Tanium: PWSH Clear History'
+    - 'Tanium: Bcdedit Boot into Safe Mode'
+    - 'Tanium: Excel Spawned Process Creating VBS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating VBS Files'
+    - 'Tanium: User Added to Local Administrators'
+    - 'Tanium: Windows Certificate Utility Misuse'
+    - 'Tanium: Disable PowerShell Session Event Tracing'
+    - 'Tanium: Makecab File Download'
+    - 'Tanium: Script Based Scheduled Tasks'
+    - 'Tanium: PowerShell Audio Capture'
+    - 'Tanium: SyncAppVPublishingServer Binary Powershell Execution'
+    - 'Tanium: Suspicious JavaScript Execution'
+    - 'Tanium: Remote Service Creation'
+    - 'Tanium: IIS Worker Suspicious CMD Creation'
+    - 'Tanium: Edge Spawned CMD'
+    - 'Tanium: CimProvider DLL Injection'
+    - 'Tanium: Dfsvc File Download'
+    - 'Tanium: Diskshadow Script Execution'
+    - 'Tanium: Signed Script Proxy Execution Cscript WinRM'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: InstallUtil AppLocker Bypass Executable'
+    - 'Tanium: Regasm DLL Load'
+    - 'Tanium: ExtExport DLL Execution'
+    - 'Tanium: Fsutil Deleting USN Journal'
+    - 'Tanium: COM Hijack Regedit'
+    - 'Tanium: Windows Defender File Download'
+    - 'Tanium: Curl.exe Commands Exfil Port 80'
+    - 'Tanium: Excel Spawned Process Creating BAT Files'
+    - 'Tanium: Uncommon XSL Script Execution'
+    - 'Tanium: Ilasm EXE complication'
+    - 'Tanium: AMSI and Script Block Evasion'
+    - 'Tanium: Powershell Images Loaded by regasm.exe'
+    - 'Tanium: RunDll Creating MiniDump'
+    - 'Tanium: Tscon RDP Session Hijack'
+    - 'Tanium: Word Spawned Process Creating VBS Files'
+    - 'Tanium: Logman Disable ETW Provider'
+    - 'Tanium: Wbadmin Catalog Deletion'
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Firefox Spawned PowerShell'
+    - 'Tanium: Remote Scheduled Task Creation'
+    - 'Tanium: Wbadmin System State Backup Deletion'
+    - 'Tanium: Diskshadow Spawned Process'
+    - 'Tanium: Firefox Spawned PWSH'
+    - 'Tanium: WSL OpenSSL Commands Download'
+    - 'Tanium: AppInstaller File Download'
+    - 'Tanium: Browser Created HTA or PS1 Files'
+    - 'Tanium: Bypass User Account Control'
+    - 'Tanium: PowerPoint Spawned Process Creating CMD Files'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Bcdedit Disabling Recovery'
+    - 'Tanium: Curl.exe Commands Exfil Port 443'
+    - 'Tanium: CertReq Post File Download'
+    - 'Tanium: XWizard Proxy Execution'
+    - 'Tanium: MMC Spawned CMD'
+    - 'Tanium: Unsigned Process Creating a PowerShell Script'
+    - 'Tanium: Logman Disable All PowerShell Logging'
+    - 'Tanium: Conhost Spawned Executable'
+    - 'Tanium: Suspicious HTA Execution'
+    - 'Tanium: Compiled Help (CHM) Command Execution'
+    - 'Tanium: ConfigSecurityPolicy Exfil Upload'
+    - 'Tanium: Meterpreter Privilege Escalation'
+    - 'Tanium: Bcdedit Boot Status Ignore Failures'
+    - 'Tanium: Vssadmin Resize Volume Shadow Copy'
+    - 'Tanium: WMI Managed Object Format Execution'
+    - 'Tanium: InstallUtil AppLocker Bypass DLL'
+    - 'Tanium: Indirect Command Execution Forfiles'
+    - 'Tanium: Kekeo Command Arguments'
+    - 'Tanium: Code Execution via Windows Update Client'
+    - 'Tanium: MSIExec Remote Execution'
+    - 'Tanium: File Download with Desktopimgdownldr'
+    - 'Tanium: BITSADMIN File Retrieval and Execution'
+    - 'Tanium: COM Hijack Reg'
+    - 'Tanium: PowerShell Using PowerCat'
+    - 'Tanium: At Scheduled Tasks Persistence'
+    - 'Tanium: MMC Execute COM Payload'
+    - 'Tanium: Service Security Descriptor Discovery SCManager'
+    - 'Tanium: SyncAppVPublishingServer VBS Process Execution'
+    - 'Tanium: WMIC Antivirus Discovery'
+    - 'Tanium: Edge Spawned PowerShell'
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    - 'Tanium: WMIC Process Creation'
+    - 'Tanium: Suspicious PowerShell Command Line'
+    - 'Tanium: WSL Socat Commands Reverse Shell'
+    - 'Tanium: Ie4uinit Binary Duplication'
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Suspicious PowerShell Process Ancestry'
+    - 'Tanium: Scripts Created by Office Applications'
+    - 'Tanium: Indirect Command Execution Pcalua'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: XWizard Proxy Download'
+    - 'Tanium: Service Security Descriptor Persistence SCManager'
+    - 'Tanium: DataSvcUtil Exfil Upload'
+    - 'Tanium: CmdKey Cached Credential Discovery'
+    - 'Tanium: Excel Spawned Process Creating CMD Files'
+    - 'Tanium: CIM Registry Image Load'
+    - 'Tanium: Suspicious PowerShell Launched by WMI'
+    - 'Tanium: COM Hijack PWSH'
+    - 'Tanium: Runscripthelper Execution ps1'
+    - 'Tanium: Expand File Download'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Indirect Command Execution AtBroker'
+    - 'Tanium: Edge Spawned PWSH'
+    - 'Tanium: PowerPoint Spawned Process Creating BAT Files'
+    - 'Tanium: PowerPoint Spawned Process Creating PS1 Files'
+    - 'Tanium: Excel Spawned Process Creating PS1 Files'
+    - 'Tanium: Explorer Spawned Executable'
+    - 'Tanium: RunDLL INF Script Execution'
+    - 'Tanium: Volume Shadow Copy Deletion'
+    - 'Tanium: PowerShell Using System.Net.Sockets.TCPClient'
+    - 'Tanium: PWSH Exclusion Added to Defender'
+    - 'Tanium: AdFind Object Computer'
+    - 'Tanium: Indirect Command Execution Bash'
+    - 'Tanium: Minifilter Driver Enumeration'
+    - 'Tanium: Word Spawned Process Creating CMD Files'
+    - 'Tanium: Indirect Command Execution'
+    - 'Tanium: Netsh Helper DLL'
+    - 'Tanium: PowerShell Exclusion Added to Defender'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: PowerShell Clear History'
+    - 'Tanium: PowerShell Prompted For User Credentials'
+    - 'Tanium: MSConfig Command Execution'
+    - 'Tanium: Tracer Diagnostics Proxy Execution'
+    - 'Tanium: MMC Spawned PWSH'
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Powershell Images Loaded by installutil.exe'
+    - 'Tanium: PowerUp DLL Hijacking Attempt'
+    - 'Tanium: Suspicious PowerShell Command Line Encodeda'
+    - 'Tanium: Trusted Developer Utilities Proxy Execution'
+    - 'Tanium: IIS Worker Suspicious PowerShell Creation'
+    - 'Tanium: Esentutl Retrieve Locked File with Volume Shadow Copy'
+    - 'Tanium: MSBuild Remote Execution'
+    - 'Tanium: Program Compatibility Assistant (PCALUA.EXE) Misuse'
+    - 'Tanium: AdFind Object Organizational Unit'
+    - 'Tanium: GlobalFlags Persistence'
+    - 'Tanium: Jsc Javascript Binary Compilation'
+    - 'Tanium: Runscripthelper Execution txt'
+    - 'Tanium: Uncommon INF Script Execution'
+    - 'Tanium: COM Hijack PowerShell ISE'
+    - 'Tanium: BootCFG Boot into Safe Mode'
+    - 'Tanium: Firefox Spawned Cmd'
+    - 'Tanium: AdFind Object Subnet'
+    - 'Tanium: REGSVR32 Script Component Runtime Misuse'
+    - 'Tanium: Microsoft Workflow Compiler Misuse'
+    - 'Tanium: Findstr Download File'
+    - 'Tanium: Possible Anti-Malware Scan Interface (AMSI) Bypass Attempt'
+    - 'Tanium: Right-to-Left Override'
+    - 'Tanium: Ilasm DLL Compilation'
+    - 'Tanium: AdFind Object Person'
+    - 'Tanium: Jsc Javascript Library Compilation'
+    - 'Tanium: UMWorkerProcess Spawned Processes'
+    - 'Tanium: Word Spawned Process Creating PS1 Files'
+    - 'Tanium: Non Break Space Character'
+    - 'Tanium: AdFind Domain Trust Dump'
+    - 'Tanium: Extrac32 Download File'
+    - 'Tanium: Diantz File Download'
+    - 'Tanium: Powershell Images Loaded by regsvr32.exe'
+    - 'Tanium: Uncommon SCT Script Execution'
+    - 'Tanium: MMC Spawned PowerShell'
+    - 'Tanium: Word Spawned Process Creating BAT Files'
+    - 'Tanium: Powershell Images Loaded by rundll32.exe'
+    - 'Tanium: Powershell Images Loaded by regsvcs.exe'
+    - 'Tanium: COM Hijack PowerShell'
+    - 'Tanium: Esentutl Remote File Download or Upload'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Node Commands Reverse Shell'
+    - 'Tanium: AWK Commands Reverse Shell'
+    - 'Tanium: Vim Launching an Executable from the Command Line'
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: LD_PRELOAD via Profile Modification with sed'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    - 'Tanium: Socat SSH SOCKS5 Proxy Tunnel'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: Bash Commands Download via HTTP GET Request'
+    - 'Tanium: Chmod Set SUID Bit u+s'
+    - 'Tanium: Python Privilege Escalation'
+    - 'Tanium: Set Password to Never Expire via chage'
+    - 'Tanium: Vim Launching python from the Command Line'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: PHP Commands Download'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Whois Commands Exfiltration'
+    - 'Tanium: Ruby Capabilities Privilege Escalation'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: SSH Commands Exfil Using Head'
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: SSH Commands Exfil Using Tail'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Lua Commands Bind Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: SSH Commands Exfil Using More'
+    - 'Tanium: Set Password to Never Expire via passwd'
+    - 'Tanium: SSH Commands Exfil Using Cat'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Chmod Set SGID Bit g+s'
+    - 'Tanium: Busybox HTTP Server Exfil'
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Node Commands Bind Shell'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: SSH Commands Exfil Using Tar'
+    - 'Tanium: Vim Launching lua from the Command Line'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Script Commands Terminal Bypass'
+    - 'Tanium: Node Capabilities Privilege Escalation'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: Privilege Escalation via apt-get update Option'
+    - 'Tanium: SSH Proxy using ProxyCommand'
+    - 'Tanium: PHP Shell Break Out'
+    - 'Tanium: Privilege Escalation via apt update Option'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Chmod Set SGID Bit 2'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: Python Load Shared Libraries'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: SSH Commands Exfil Using Tac'
+    - 'Tanium: Perl Privilege Escalation'
+    - 'Tanium: SSH Commands Exfil Using Less'
+    - 'Tanium: Base64 Commands Exfil'
+    - 'Tanium: Bash Commands Exfil'
+    - 'Tanium: Lua Commands Reverse Shell'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Runas User Restriction Bypass'
+    - 'Tanium: TTY Terminal Spawned via Python'
+    - 'Tanium: Socat Commands Reverse Shell'
+    - 'Tanium: Chmod Set SUID Bit 4'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Vim Launching an Executable from the Command Line'
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    - 'Tanium: Shlayer Curl Activity Sh'
+    - 'Tanium: Shlayer Curl Activity Zsh'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: Shlayer Curl Activity Bash'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: Shlayer Curl Activity Python'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Shlayer Openssl Suspicious Decoding'
+    - 'Tanium: Socat Commands Reverse Shell'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.001
+  technique_name: 'Command and Scripting Interpreter: PowerShell'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious System Management Automation Image Load'
+    - 'Tanium: MMC Spawned PWSH'
+    - 'Tanium: Scripts Created by Office Applications'
+    - 'Tanium: SyncAppVPublishingServer VBS Powershell Execution'
+    - 'Tanium: Powershell Images Loaded by installutil.exe'
+    - 'Tanium: Firefox Spawned PowerShell'
+    - 'Tanium: Chrome Spawned PowerShell'
+    - 'Tanium: PowerUp DLL Hijacking Attempt'
+    - 'Tanium: Suspicious PowerShell Command Line Encodeda'
+    - 'Tanium: IIS Worker Suspicious PowerShell Creation'
+    - 'Tanium: Non Smss Spawned SQL Client Tools PowerShell Session'
+    - 'Tanium: Chrome Spawned PWSH'
+    - 'Tanium: Firefox Spawned PWSH'
+    - 'Tanium: GlobalFlags Persistence'
+    - 'Tanium: COM Hijack PowerShell ISE'
+    - 'Tanium: Browser Created HTA or PS1 Files'
+    - 'Tanium: COM Hijack PWSH'
+    - 'Tanium: AMSI and Script Block Evasion'
+    - 'Tanium: Suspicious PowerShell Launched by WMI'
+    - 'Tanium: COM Hijack Persistence System Management Automation'
+    - 'Tanium: PWSH Clear History'
+    - 'Tanium: Edge Spawned PWSH'
+    - 'Tanium: Suspicious PowerShell Process Ancestry'
+    - 'Tanium: Disable PowerShell Session Event Tracing'
+    - 'Tanium: Script Based Scheduled Tasks'
+    - 'Tanium: PowerShell Clear History'
+    - 'Tanium: Unsigned Process Creating a PowerShell Script'
+    - 'Tanium: Logman Disable All PowerShell Logging'
+    - 'Tanium: PowerShell Audio Capture'
+    - 'Tanium: SyncAppVPublishingServer Binary Powershell Execution'
+    - 'Tanium: PowerShell Using System.Net.Sockets.TCPClient'
+    - 'Tanium: PWSH Exclusion Added to Defender'
+    - 'Tanium: Powershell Images Loaded by regsvr32.exe'
+    - 'Tanium: Uncommon SCT Script Execution'
+    - 'Tanium: MMC Spawned PowerShell'
+    - 'Tanium: PowerShell Using PowerCat'
+    - 'Tanium: PowerShell Exclusion Added to Defender'
+    - 'Tanium: Powershell Images Loaded by rundll32.exe'
+    - 'Tanium: Edge Spawned PowerShell'
+    - 'Tanium: Powershell Images Loaded by regsvcs.exe'
+    - 'Tanium: COM Hijack PowerShell'
+    - 'Tanium: Suspicious PowerShell Command Line'
+    - 'Tanium: Uncommon XSL Script Execution'
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: PowerShell Prompted For User Credentials'
+    - 'Tanium: Powershell Images Loaded by regasm.exe'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.004
+  technique_name: 'Command and Scripting Interpreter: Unix Shell'
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Node Commands Reverse Shell'
+    - 'Tanium: AWK Commands Reverse Shell'
+    - 'Tanium: Vim Launching an Executable from the Command Line'
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: LD_PRELOAD via Profile Modification with sed'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    - 'Tanium: Socat SSH SOCKS5 Proxy Tunnel'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: Bash Commands Download via HTTP GET Request'
+    - 'Tanium: Chmod Set SUID Bit u+s'
+    - 'Tanium: Set Password to Never Expire via chage'
+    - 'Tanium: Vim Launching python from the Command Line'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: PHP Commands Download'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Whois Commands Exfiltration'
+    - 'Tanium: Ruby Capabilities Privilege Escalation'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: SSH Commands Exfil Using Head'
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: SSH Commands Exfil Using Tail'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Lua Commands Bind Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: SSH Commands Exfil Using More'
+    - 'Tanium: Set Password to Never Expire via passwd'
+    - 'Tanium: SSH Commands Exfil Using Cat'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Chmod Set SGID Bit g+s'
+    - 'Tanium: Busybox HTTP Server Exfil'
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: Node Commands Bind Shell'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: SSH Commands Exfil Using Tar'
+    - 'Tanium: Vim Launching lua from the Command Line'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Script Commands Terminal Bypass'
+    - 'Tanium: Node Capabilities Privilege Escalation'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: Privilege Escalation via apt-get update Option'
+    - 'Tanium: SSH Proxy using ProxyCommand'
+    - 'Tanium: PHP Shell Break Out'
+    - 'Tanium: Privilege Escalation via apt update Option'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Chmod Set SGID Bit 2'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: SSH Commands Exfil Using Tac'
+    - 'Tanium: Perl Privilege Escalation'
+    - 'Tanium: SSH Commands Exfil Using Less'
+    - 'Tanium: Base64 Commands Exfil'
+    - 'Tanium: Bash Commands Exfil'
+    - 'Tanium: Lua Commands Reverse Shell'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Runas User Restriction Bypass'
+    - 'Tanium: Socat Commands Reverse Shell'
+    - 'Tanium: Chmod Set SUID Bit 4'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Vim Launching an Executable from the Command Line'
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    - 'Tanium: Shlayer Curl Activity Sh'
+    - 'Tanium: Shlayer Curl Activity Zsh'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: Shlayer Curl Activity Bash'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Shlayer Openssl Suspicious Decoding'
+    - 'Tanium: Socat Commands Reverse Shell'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: WSL Socat Commands Reverse Shell'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1008
+  technique_name: Fallback Channels
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Node Commands Reverse Shell'
+    - 'Tanium: AWK Commands Reverse Shell'
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: Socat SSH SOCKS5 Proxy Tunnel'
+    - 'Tanium: Bash Commands Download via HTTP GET Request'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: PHP Commands Download'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Lua Commands Bind Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Node Commands Bind Shell'
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: SSH Proxy using ProxyCommand'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: Bash Commands Exfil'
+    - 'Tanium: Lua Commands Reverse Shell'
+    - 'Tanium: Socat Commands Reverse Shell'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Word Spawned Connection to Port 443'
+    - 'Tanium: Word Spawned Connection to Port 80'
+    - 'Tanium: Lsass Connection to Port 443'
+    - 'Tanium: RDP Tunneling with Fast Reverse Proxy'
+    - 'Tanium: PowerShell Using System.Net.Sockets.TCPClient'
+    - 'Tanium: PowerPoint Spawned Connection to Port 443'
+    - 'Tanium: PowerShell Using PowerCat'
+    - 'Tanium: RDP Tunneling with Chisel'
+    - 'Tanium: PowerPoint Spawned Connection to Port 80'
+    - 'Tanium: Lsass Connection to Port 80'
+    - 'Tanium: WSL Socat Commands Reverse Shell'
+    - 'Tanium: Excel Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Connection to Port 80'
+    - 'Tanium: RDP Tunneling with plink'
+    - 'Tanium: RDP Tunneling'
+    - 'Tanium: WSL OpenSSL Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Zsh Commands Reverse Shell'
+    - 'Tanium: PHP Commands Reverse Shell'
+    - 'Tanium: Socat Proxy'
+    - 'Tanium: Socat UDP Shell'
+    - 'Tanium: OpenSSL Commands Reverse Shell'
+    - 'Tanium: Socat Commands Bind Shell'
+    - 'Tanium: Java Reverse Shell Commands'
+    - 'Tanium: Socat Encrypted Reverse Shell'
+    - 'Tanium: Socat SCTP Shell'
+    - 'Tanium: Socat Login Shell'
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: Ruby Commands Reverse Shell'
+    - 'Tanium: Perl Commands Reverse Shell'
+    - 'Tanium: Socat Encrypted Bind Shell'
+    - 'Tanium: Socat TCP Shell'
+    - 'Tanium: Perl CPAN Commands Reverse Shell'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: Socat Commands Reverse Shell'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1482
+  technique_name: Domain Trust Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Nltest Discovery'
+    - 'Tanium: AdFind Domain Trust Dump'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.003
+  technique_name: 'Command and Scripting Interpreter: Windows Command Shell'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Chrome Spawned CMD'
+    - 'Tanium: SyncAppVPublishingServer VBS Powershell Execution'
+    - 'Tanium: Dnscmd Remote DNS Server DLL Injection'
+    - 'Tanium: Command Quoted Directory Traversal Execution'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: Binary Created by C# Command Line Compiler'
+    - 'Tanium: FTP Spawned by CMD'
+    - 'Tanium: Ieexec Download and Execution'
+    - 'Tanium: AdFind Object Group'
+    - 'Tanium: Uncommon RegSvcs & RegAsm Script Execution'
+    - 'Tanium: Windows Firewall Disabled'
+    - 'Tanium: Gfxdownloadwrapper Download File'
+    - 'Tanium: Windows Remote Shell Command Execution'
+    - 'Tanium: Bcdedit Boot into Safe Mode'
+    - 'Tanium: User Added to Local Administrators'
+    - 'Tanium: Windows Certificate Utility Misuse'
+    - 'Tanium: Makecab File Download'
+    - 'Tanium: Script Based Scheduled Tasks'
+    - 'Tanium: Suspicious JavaScript Execution'
+    - 'Tanium: Remote Service Creation'
+    - 'Tanium: IIS Worker Suspicious CMD Creation'
+    - 'Tanium: Edge Spawned CMD'
+    - 'Tanium: CimProvider DLL Injection'
+    - 'Tanium: Dfsvc File Download'
+    - 'Tanium: Diskshadow Script Execution'
+    - 'Tanium: Signed Script Proxy Execution Cscript WinRM'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: InstallUtil AppLocker Bypass Executable'
+    - 'Tanium: Regasm DLL Load'
+    - 'Tanium: ExtExport DLL Execution'
+    - 'Tanium: Fsutil Deleting USN Journal'
+    - 'Tanium: COM Hijack Regedit'
+    - 'Tanium: Windows Defender File Download'
+    - 'Tanium: Curl.exe Commands Exfil Port 80'
+    - 'Tanium: Excel Spawned Process Creating BAT Files'
+    - 'Tanium: Uncommon XSL Script Execution'
+    - 'Tanium: Ilasm EXE complication'
+    - 'Tanium: RunDll Creating MiniDump'
+    - 'Tanium: Tscon RDP Session Hijack'
+    - 'Tanium: Logman Disable ETW Provider'
+    - 'Tanium: Wbadmin Catalog Deletion'
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Remote Scheduled Task Creation'
+    - 'Tanium: Wbadmin System State Backup Deletion'
+    - 'Tanium: Diskshadow Spawned Process'
+    - 'Tanium: WSL OpenSSL Commands Download'
+    - 'Tanium: AppInstaller File Download'
+    - 'Tanium: Bypass User Account Control'
+    - 'Tanium: PowerPoint Spawned Process Creating CMD Files'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Bcdedit Disabling Recovery'
+    - 'Tanium: Curl.exe Commands Exfil Port 443'
+    - 'Tanium: CertReq Post File Download'
+    - 'Tanium: XWizard Proxy Execution'
+    - 'Tanium: MMC Spawned CMD'
+    - 'Tanium: Conhost Spawned Executable'
+    - 'Tanium: Suspicious HTA Execution'
+    - 'Tanium: Compiled Help (CHM) Command Execution'
+    - 'Tanium: ConfigSecurityPolicy Exfil Upload'
+    - 'Tanium: Meterpreter Privilege Escalation'
+    - 'Tanium: Bcdedit Boot Status Ignore Failures'
+    - 'Tanium: Vssadmin Resize Volume Shadow Copy'
+    - 'Tanium: WMI Managed Object Format Execution'
+    - 'Tanium: InstallUtil AppLocker Bypass DLL'
+    - 'Tanium: Indirect Command Execution Forfiles'
+    - 'Tanium: Kekeo Command Arguments'
+    - 'Tanium: Code Execution via Windows Update Client'
+    - 'Tanium: MSIExec Remote Execution'
+    - 'Tanium: File Download with Desktopimgdownldr'
+    - 'Tanium: BITSADMIN File Retrieval and Execution'
+    - 'Tanium: COM Hijack Reg'
+    - 'Tanium: At Scheduled Tasks Persistence'
+    - 'Tanium: SyncAppVPublishingServer VBS Process Execution'
+    - 'Tanium: Service Security Descriptor Discovery SCManager'
+    - 'Tanium: WMIC Antivirus Discovery'
+    - 'Tanium: WMIC Process Creation'
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    - 'Tanium: Ie4uinit Binary Duplication'
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Scripts Created by Office Applications'
+    - 'Tanium: Indirect Command Execution Pcalua'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: XWizard Proxy Download'
+    - 'Tanium: Service Security Descriptor Persistence SCManager'
+    - 'Tanium: DataSvcUtil Exfil Upload'
+    - 'Tanium: CmdKey Cached Credential Discovery'
+    - 'Tanium: Excel Spawned Process Creating CMD Files'
+    - 'Tanium: CIM Registry Image Load'
+    - 'Tanium: Runscripthelper Execution ps1'
+    - 'Tanium: Expand File Download'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Indirect Command Execution AtBroker'
+    - 'Tanium: PowerPoint Spawned Process Creating BAT Files'
+    - 'Tanium: PowerPoint Spawned Process Creating PS1 Files'
+    - 'Tanium: Excel Spawned Process Creating PS1 Files'
+    - 'Tanium: Explorer Spawned Executable'
+    - 'Tanium: RunDLL INF Script Execution'
+    - 'Tanium: Volume Shadow Copy Deletion'
+    - 'Tanium: AdFind Object Computer'
+    - 'Tanium: Indirect Command Execution Bash'
+    - 'Tanium: Minifilter Driver Enumeration'
+    - 'Tanium: Word Spawned Process Creating CMD Files'
+    - 'Tanium: Indirect Command Execution'
+    - 'Tanium: Netsh Helper DLL'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: MSConfig Command Execution'
+    - 'Tanium: Tracer Diagnostics Proxy Execution'
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Trusted Developer Utilities Proxy Execution'
+    - 'Tanium: Esentutl Retrieve Locked File with Volume Shadow Copy'
+    - 'Tanium: MSBuild Remote Execution'
+    - 'Tanium: Program Compatibility Assistant (PCALUA.EXE) Misuse'
+    - 'Tanium: AdFind Object Organizational Unit'
+    - 'Tanium: Jsc Javascript Binary Compilation'
+    - 'Tanium: Runscripthelper Execution txt'
+    - 'Tanium: Uncommon INF Script Execution'
+    - 'Tanium: Firefox Spawned Cmd'
+    - 'Tanium: BootCFG Boot into Safe Mode'
+    - 'Tanium: AdFind Object Subnet'
+    - 'Tanium: REGSVR32 Script Component Runtime Misuse'
+    - 'Tanium: Microsoft Workflow Compiler Misuse'
+    - 'Tanium: Findstr Download File'
+    - 'Tanium: Possible Anti-Malware Scan Interface (AMSI) Bypass Attempt'
+    - 'Tanium: Right-to-Left Override'
+    - 'Tanium: Ilasm DLL Compilation'
+    - 'Tanium: AdFind Object Person'
+    - 'Tanium: Jsc Javascript Library Compilation'
+    - 'Tanium: Word Spawned Process Creating PS1 Files'
+    - 'Tanium: Non Break Space Character'
+    - 'Tanium: AdFind Domain Trust Dump'
+    - 'Tanium: Extrac32 Download File'
+    - 'Tanium: Diantz File Download'
+    - 'Tanium: Uncommon SCT Script Execution'
+    - 'Tanium: Word Spawned Process Creating BAT Files'
+    - 'Tanium: Esentutl Remote File Download or Upload'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1018
+  technique_name: Remote System Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: AdFind Object Computer'
+    - 'Tanium: Nltest Discovery'
+    - 'Tanium: Netsh WLAN Discovery'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1069
+  technique_name: Permission Groups Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    - 'Tanium: AdFind Object Group'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1069.002
+  technique_name: 'Permission Groups Discovery: Domain Groups'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    - 'Tanium: AdFind Object Group'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1087
+  technique_name: Account Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: AdFind Object Person'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1087.002
+  technique_name: 'Account Discovery: Domain Account'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: AdFind Object Person'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Domain Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1016
+  technique_name: System Network Configuration Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Nltest Discovery'
+    - 'Tanium: Netsh WLAN Discovery'
+    - 'Tanium: AdFind Object Subnet'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1087.001
+  technique_name: 'Account Discovery: Local Account'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1087.003
+  technique_name: 'Account Discovery: Email Account'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1069.001
+  technique_name: 'Permission Groups Discovery: Local Groups'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: Administrator Account Enumeration - Spanish'
+    - 'Tanium: Administrator Account Enumeration'
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1105
+  technique_name: Ingress Tool Transfer
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: XWizard Proxy Download'
+    - 'Tanium: Ieexec Download and Execution'
+    - 'Tanium: MSBuild Remote Execution'
+    - 'Tanium: WSL OpenSSL Commands Download'
+    - 'Tanium: AppInstaller File Download'
+    - 'Tanium: Suspicious PowerShell Launched by WMI'
+    - 'Tanium: Expand File Download'
+    - 'Tanium: Gfxdownloadwrapper Download File'
+    - 'Tanium: REGSVR32 Script Component Runtime Misuse'
+    - 'Tanium: Windows Certificate Utility Misuse'
+    - 'Tanium: CertReq Post File Download'
+    - 'Tanium: Makecab File Download'
+    - 'Tanium: Findstr Download File'
+    - 'Tanium: Dfsvc File Download'
+    - 'Tanium: Extrac32 Download File'
+    - 'Tanium: Diantz File Download'
+    - 'Tanium: MSIExec Remote Execution'
+    - 'Tanium: File Download with Desktopimgdownldr'
+    - 'Tanium: BITSADMIN File Retrieval and Execution'
+    - 'Tanium: Windows Defender File Download'
+    - 'Tanium: Esentutl Remote File Download or Upload'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Bash Commands Download via HTTP GET Request'
+    - 'Tanium: PHP Commands Download'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Socat Commands Download'
+    - 'Tanium: Shlayer Curl Activity Bash'
+    - 'Tanium: Shlayer Openssl Suspicious Decoding'
+    - 'Tanium: Shlayer Curl Activity Python'
+    - 'Tanium: Shlayer Curl Activity Sh'
+    - 'Tanium: Shlayer Curl Activity Zsh'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1053
+  technique_name: Scheduled Task/Job
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Script Based Scheduled Tasks'
+    - 'Tanium: Remote Scheduled Task Creation'
+    - 'Tanium: At Scheduled Tasks Persistence'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1053.002
+  technique_name: 'Scheduled Task/Job: At (Windows)'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: At Scheduled Tasks Persistence'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1197
+  technique_name: BITS Jobs
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: BITSADMIN File Retrieval and Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1048
+  technique_name: Exfiltration Over Alternative Protocol
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: BITSADMIN File Retrieval and Execution'
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1001
+  technique_name: Data Obfuscation
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Base64 Commands Exfil'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious PowerShell Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1041
+  technique_name: Exfiltration Over C2 Channel
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: Busybox HTTP Server Exfil'
+    - 'Tanium: SSH Commands Exfil Using Tac'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: SSH Commands Exfil Using Tar'
+    - 'Tanium: Whois Commands Exfiltration'
+    - 'Tanium: SSH Commands Exfil Using Less'
+    - 'Tanium: Base64 Commands Exfil'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    - 'Tanium: SSH Commands Exfil Using Head'
+    - 'Tanium: SSH Commands Exfil Using Tail'
+    - 'Tanium: SSH Proxy using ProxyCommand'
+    - 'Tanium: SSH Commands Exfil Using More'
+    - 'Tanium: SSH Commands Exfil Using Cat'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: DataSvcUtil Exfil Upload'
+    - 'Tanium: Curl.exe Commands Exfil Port 443'
+    - 'Tanium: ConfigSecurityPolicy Exfil Upload'
+    - 'Tanium: Curl.exe Commands Exfil Port 80'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Curl Commands Exfil Port 80'
+    - 'Tanium: Socat Commands Exfiltration'
+    - 'Tanium: Socat Commands Interactive SSH'
+    - 'Tanium: Python http.server Exfil'
+    - 'Tanium: Python SimpleHTTPRequestHandler Exfil'
+    - 'Tanium: Curl Commands Exfil Port 443'
+    - 'Tanium: Python SimpleHTTPServer Exfil'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1048.003
+  technique_name: 'Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated
+    Non-C2 Protocol'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1071
+  technique_name: Application Layer Protocol
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    - 'Tanium: Lsass Connection to Port 80'
+    - 'Tanium: Lsass Connection to Port 443'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1071.004
+  technique_name: 'Application Layer Protocol: DNS'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Base64 Encoded DNS Query'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1490
+  technique_name: Inhibit System Recovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: BootCFG Boot into Safe Mode'
+    - 'Tanium: Fsutil Deleting USN Journal'
+    - 'Tanium: Wbadmin Catalog Deletion'
+    - 'Tanium: Volume Shadow Copy Deletion'
+    - 'Tanium: Data Destruction SDelete'
+    - 'Tanium: Bcdedit Disabling Recovery'
+    - 'Tanium: Bcdedit Boot Status Ignore Failures'
+    - 'Tanium: Bcdedit Boot into Safe Mode'
+    - 'Tanium: Wbadmin System State Backup Deletion'
+    - 'Tanium: Vssadmin Resize Volume Shadow Copy'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1529
+  technique_name: System Shutdown/Reboot
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: BootCFG Boot into Safe Mode'
+    - 'Tanium: Bcdedit Boot into Safe Mode'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1027
+  technique_name: Obfuscated Files or Information
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Ilasm DLL Compilation'
+    - 'Tanium: Jsc Javascript Library Compilation'
+    - 'Tanium: Suspicious PowerShell Command Line Encodeda'
+    - 'Tanium: Binary Created by C# Command Line Compiler'
+    - 'Tanium: Suspicious PowerShell Command Line'
+    - 'Tanium: Ilasm EXE complication'
+    - 'Tanium: Jsc Javascript Binary Compilation'
+    - 'Tanium: Microsoft Workflow Compiler Misuse'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1027.004
+  technique_name: 'Obfuscated Files or Information: Compile After Delivery'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Ilasm DLL Compilation'
+    - 'Tanium: Jsc Javascript Library Compilation'
+    - 'Tanium: Binary Created by C# Command Line Compiler'
+    - 'Tanium: Ilasm EXE complication'
+    - 'Tanium: Jsc Javascript Binary Compilation'
+    - 'Tanium: Microsoft Workflow Compiler Misuse'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218
+  technique_name: Signed Binary Proxy Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: MSConfig Command Execution'
+    - 'Tanium: Tracer Diagnostics Proxy Execution'
+    - 'Tanium: SyncAppVPublishingServer VBS Powershell Execution'
+    - 'Tanium: Indirect Command Execution Pcalua'
+    - 'Tanium: Powershell Images Loaded by installutil.exe'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: XWizard Proxy Download'
+    - 'Tanium: Odbconf DLL Execution via DLLRegisterServer'
+    - 'Tanium: Ieexec Download and Execution'
+    - 'Tanium: Non Smss Spawned SQL Client Tools PowerShell Session'
+    - 'Tanium: Esentutl Retrieve Locked File with Volume Shadow Copy'
+    - 'Tanium: CIM Registry Image Load'
+    - 'Tanium: Runscripthelper Execution txt'
+    - 'Tanium: Uncommon INF Script Execution'
+    - 'Tanium: Uncommon RegSvcs & RegAsm Script Execution'
+    - 'Tanium: Browser Created HTA or PS1 Files'
+    - 'Tanium: Runscripthelper Execution ps1'
+    - 'Tanium: Odbconf DLL Execution via RSP File'
+    - 'Tanium: Mavinject DLL Injection'
+    - 'Tanium: REGSVR32 Script Component Runtime Misuse'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Indirect Command Execution AtBroker'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: XWizard Proxy Execution'
+    - 'Tanium: RunDLL INF Script Execution'
+    - 'Tanium: SyncAppVPublishingServer Binary Powershell Execution'
+    - 'Tanium: Suspicious JavaScript Execution'
+    - 'Tanium: Suspicious HTA Execution'
+    - 'Tanium: Compiled Help (CHM) Command Execution'
+    - 'Tanium: Meterpreter Privilege Escalation'
+    - 'Tanium: Msdt Execution Bypass with Answer File'
+    - 'Tanium: UMWorkerProcess Spawned Processes'
+    - 'Tanium: CimProvider DLL Injection'
+    - 'Tanium: Dfsvc File Download'
+    - 'Tanium: Diskshadow Script Execution'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: InstallUtil AppLocker Bypass DLL'
+    - 'Tanium: InstallUtil AppLocker Bypass Executable'
+    - 'Tanium: Indirect Command Execution Bash'
+    - 'Tanium: Regasm DLL Load'
+    - 'Tanium: Indirect Command Execution Forfiles'
+    - 'Tanium: ExtExport DLL Execution'
+    - 'Tanium: Powershell Images Loaded by regsvr32.exe'
+    - 'Tanium: Code Execution via Windows Update Client'
+    - 'Tanium: MSIExec Remote Execution'
+    - 'Tanium: Indirect Command Execution'
+    - 'Tanium: SyncAppVPublishingServer VBS Process Execution'
+    - 'Tanium: Powershell Images Loaded by rundll32.exe'
+    - 'Tanium: Powershell Images Loaded by regsvcs.exe'
+    - 'Tanium: Suspicious PowerShell Process Ancestry'
+    - 'Tanium: Powershell Images Loaded by regasm.exe'
+    - 'Tanium: RunDll Creating MiniDump'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.005
+  technique_name: 'Signed Binary Proxy Execution: Mshta'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Browser Created HTA or PS1 Files'
+    - 'Tanium: Suspicious JavaScript Execution'
+    - 'Tanium: Suspicious HTA Execution'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: Suspicious PowerShell Process Ancestry'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1548
+  technique_name: Abuse Elevation Control Mechanism
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: COM Hijack sdclt'
+    - 'Tanium: Bypass User Account Control WSReset'
+    - 'Tanium: Bypass User Account Control Fodhelper'
+    - 'Tanium: Bypass User Account Control'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Chmod Set SGID Bit 2'
+    - 'Tanium: Chmod Set SGID Bit g+s'
+    - 'Tanium: Perl Privilege Escalation'
+    - 'Tanium: Privilege Escalation via apt update Option'
+    - 'Tanium: Ruby Capabilities Privilege Escalation'
+    - 'Tanium: SUID or GUID Enumeration'
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: Node Capabilities Privilege Escalation'
+    - 'Tanium: Privilege Escalation via apt-get update Option'
+    - 'Tanium: Chmod Set SUID Bit u+s'
+    - 'Tanium: Python Privilege Escalation'
+    - 'Tanium: Chmod Set SUID Bit 4'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: Security Trampoline Privilege Escalation'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1548.002
+  technique_name: 'Abuse Elevation Control Mechanism: Bypass User Account Control'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: COM Hijack sdclt'
+    - 'Tanium: Bypass User Account Control WSReset'
+    - 'Tanium: Bypass User Account Control Fodhelper'
+    - 'Tanium: Bypass User Account Control'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1112
+  technique_name: Modify Registry
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Disable Security Events with MiniNT Registry Key'
+    - 'Tanium: Image File Debugger Tampering Osk'
+    - 'Tanium: Registry Disable All .NET ETW Logging'
+    - 'Tanium: Image File Debugger Tampering Narrator'
+    - 'Tanium: LSASS Registry DirectoryServiceExtPt DLL Load'
+    - 'Tanium: Windows Accessibility Binary Replacement AtBroker'
+    - 'Tanium: Password Values in Registry'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: Image File Debugger Tampering - Sticky Keys Attack'
+    - 'Tanium: Windows Telemetry Control Monitoring'
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    - 'Tanium: Image File Debugger Tampering Sethc'
+    - 'Tanium: GlobalFlags Persistence'
+    - 'Tanium: COM Hijack PowerShell ISE'
+    - 'Tanium: COM Hijack PWSH'
+    - 'Tanium: COM Hijack Persistence System Management Automation'
+    - 'Tanium: Bypass User Account Control'
+    - 'Tanium: Windows Accessibility Binary Replacement Narrator'
+    - 'Tanium: Windows Accessibility Binary Replacement Utilman'
+    - 'Tanium: Mavinject DLL Injection'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Command Processor AutoRun Persistence'
+    - 'Tanium: Disk Cleanup Persistence PreCleanupString'
+    - 'Tanium: RDP Enabled via Registry Modification'
+    - 'Tanium: Image File Debugger Tampering DisplaySwitch'
+    - 'Tanium: Windows Accessibility Binary Replacement DisplaySwitch'
+    - 'Tanium: LSASS Registry LsaDbExtPt DLL Load'
+    - 'Tanium: Image File Debugger Tampering Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Sethc'
+    - 'Tanium: Image File Debugger Tampering AtBroker'
+    - 'Tanium: Image File Debugger Tampering Utilman'
+    - 'Tanium: Shim Database Persistence'
+    - 'Tanium: Windows Accessibility Logon Bypasses'
+    - 'Tanium: COM Hijack Regedit'
+    - 'Tanium: Persistence via Certificate Store Provider'
+    - 'Tanium: SDB Install Using Sdb Explorer'
+    - 'Tanium: SDB Install Using Sdbinst'
+    - 'Tanium: Windows Accessibility Binary Replacement Magnify'
+    - 'Tanium: COM Hijack Reg'
+    - 'Tanium: Windows Accessibility Binary Replacement Osk'
+    - 'Tanium: Disk Cleanup Persistence CleanupString'
+    - 'Tanium: COM Hijack PowerShell'
+    - 'Tanium: Disable Windows Defender'
+    - 'Tanium: Windows Defender Exclude EXE'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546
+  technique_name: Event Triggered Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Image File Debugger Tampering Osk'
+    - 'Tanium: Image File Debugger Tampering Narrator'
+    - 'Tanium: Windows Accessibility Binary Replacement AtBroker'
+    - 'Tanium: Image File Debugger Tampering - Sticky Keys Attack'
+    - 'Tanium: Image File Debugger Tampering Sethc'
+    - 'Tanium: GlobalFlags Persistence'
+    - 'Tanium: COM Hijack PowerShell ISE'
+    - 'Tanium: COM Hijack PWSH'
+    - 'Tanium: COM Hijack Persistence System Management Automation'
+    - 'Tanium: Windows Accessibility Binary Replacement Narrator'
+    - 'Tanium: COM Hijack sdclt'
+    - 'Tanium: Windows Accessibility Binary Replacement Utilman'
+    - 'Tanium: Command Processor AutoRun Persistence'
+    - 'Tanium: Image File Debugger Tampering DisplaySwitch'
+    - 'Tanium: Windows Accessibility Binary Replacement DisplaySwitch'
+    - 'Tanium: Image File Debugger Tampering Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Sethc'
+    - 'Tanium: Image File Debugger Tampering AtBroker'
+    - 'Tanium: Image File Debugger Tampering Utilman'
+    - 'Tanium: Shim Database Persistence'
+    - 'Tanium: Windows Accessibility Logon Bypasses'
+    - 'Tanium: COM Hijack Regedit'
+    - 'Tanium: SDB Install Using Sdb Explorer'
+    - 'Tanium: SDB Install Using Sdbinst'
+    - 'Tanium: Netsh Helper DLL'
+    - 'Tanium: Windows Accessibility Binary Replacement Magnify'
+    - 'Tanium: COM Hijack Reg'
+    - 'Tanium: Windows Accessibility Binary Replacement Osk'
+    - 'Tanium: COM Hijack PowerShell'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Emond Modification'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.015
+  technique_name: 'Event Triggered Execution: Component Object Model Hijacking'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: COM Hijack PWSH'
+    - 'Tanium: COM Hijack Persistence System Management Automation'
+    - 'Tanium: COM Hijack Regedit'
+    - 'Tanium: COM Hijack sdclt'
+    - 'Tanium: COM Hijack Reg'
+    - 'Tanium: COM Hijack PowerShell'
+    - 'Tanium: COM Hijack PowerShell ISE'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1548.001
+  technique_name: 'Abuse Elevation Control Mechanism: Setuid and Setgid'
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Chmod Set SGID Bit 2'
+    - 'Tanium: Chmod Set SGID Bit g+s'
+    - 'Tanium: Perl Privilege Escalation'
+    - 'Tanium: Ruby Capabilities Privilege Escalation'
+    - 'Tanium: SUID or GUID Enumeration'
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: Node Capabilities Privilege Escalation'
+    - 'Tanium: Chmod Set SUID Bit u+s'
+    - 'Tanium: Python Privilege Escalation'
+    - 'Tanium: Chmod Set SUID Bit 4'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: Security Trampoline Privilege Escalation'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1204
+  technique_name: User Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Word Spawned Process Creating VBS Files'
+    - 'Tanium: Excel Web Query Execution'
+    - 'Tanium: Word Spawned Process Creating DLL Files'
+    - 'Tanium: Excel Spawned Process Creating DLL Files'
+    - 'Tanium: PowerPoint Spawned Connection to Port 80'
+    - 'Tanium: Excel Spawned Process Creating CMD Files'
+    - 'Tanium: Word Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Process Creating SYS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating CMD Files'
+    - 'Tanium: PowerPoint Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Process Creating VBS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating VBS Files'
+    - 'Tanium: Excel Spawned Process Creating EXE Files'
+    - 'Tanium: PowerPoint Spawned Process Creating BAT Files'
+    - 'Tanium: Excel Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Connection to Port 80'
+    - 'Tanium: PowerPoint Spawned Process Creating PS1 Files'
+    - 'Tanium: Excel Spawned Process Creating PS1 Files'
+    - 'Tanium: Word Spawned Process Creating PS1 Files'
+    - 'Tanium: Firefox Modifying Files in Windows Directory'
+    - 'Tanium: Word Spawned Process Creating EXE Files'
+    - 'Tanium: Microsoft Edge Modifying Files in Windows Directory'
+    - 'Tanium: PowerPoint Spawned Process Creating DLL Files'
+    - 'Tanium: PowerPoint Spawned Process Creating SYS Files'
+    - 'Tanium: Word Spawned Process Creating CMD Files'
+    - 'Tanium: Word Spawned Process Creating SYS Files'
+    - 'Tanium: Chrome Modifying Files in Windows Directory'
+    - 'Tanium: PowerPoint Spawned Process Creating EXE Files'
+    - 'Tanium: Word Spawned Process Creating BAT Files'
+    - 'Tanium: Excel Spawned Process Creating BAT Files'
+    - 'Tanium: Word Spawned Connection to Port 80'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1204.001
+  technique_name: 'User Execution: Malicious Link'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Microsoft Edge Modifying Files in Windows Directory'
+    - 'Tanium: Firefox Modifying Files in Windows Directory'
+    - 'Tanium: Chrome Modifying Files in Windows Directory'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1055
+  technique_name: Process Injection
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious System Management Automation Image Load'
+    - 'Tanium: Chrome Spawned CMD'
+    - 'Tanium: MMC Spawned PWSH'
+    - 'Tanium: Remote Service Control Named Pipe Interaction'
+    - 'Tanium: Firefox Spawned PowerShell'
+    - 'Tanium: Chrome Spawned PowerShell'
+    - 'Tanium: NET CLR Artifact WMIC'
+    - 'Tanium: Spooler Service Creating or Spawning Executables'
+    - 'Tanium: FTP Spawned by CMD'
+    - 'Tanium: NET CLR Artifact Svchost'
+    - 'Tanium: IIS Worker Suspicious PowerShell Creation'
+    - 'Tanium: NET CLR Artifact Regsvr32'
+    - 'Tanium: Chrome Spawned PWSH'
+    - 'Tanium: Firefox Spawned PWSH'
+    - 'Tanium: SharpPack Image Load'
+    - 'Tanium: Firefox Spawned Cmd'
+    - 'Tanium: Werfault with Suspicious Command Invocation'
+    - 'Tanium: IIS Worker Suspicious Net Creation'
+    - 'Tanium: Mavinject DLL Injection'
+    - 'Tanium: Edge Spawned PWSH'
+    - 'Tanium: NET CLR Artifact Cscript'
+    - 'Tanium: LSASS Creating or Spawning Executable Files'
+    - 'Tanium: MMC Spawned CMD'
+    - 'Tanium: IIS Worker Suspicious CMD Creation'
+    - 'Tanium: Edge Spawned CMD'
+    - 'Tanium: IIS Worker Suspicious whoami Creation'
+    - 'Tanium: Common Language Runtime Image Load'
+    - 'Tanium: MMC Spawned PowerShell'
+    - 'Tanium: MMC Execute COM Payload'
+    - 'Tanium: NET CLR Artifact Mshta'
+    - 'Tanium: NET CLR Artifact Wscript'
+    - 'Tanium: Edge Spawned PowerShell'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Python Load Shared Libraries'
+    - 'Tanium: LD_PRELOAD via Profile Modification with sed'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1572
+  technique_name: Protocol Tunneling
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: RDP Tunneling with Fast Reverse Proxy'
+    - 'Tanium: RDP Tunneling with Chisel'
+    - 'Tanium: RDP Tunneling with plink'
+    - 'Tanium: Chrome Using SOCKS Proxy Tunneling via Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1090
+  technique_name: Proxy
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Netsh Port Forwarding'
+    - 'Tanium: Chrome Using SOCKS Proxy Tunneling via Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1573
+  technique_name: Encrypted Channel
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: RDP Tunneling with plink'
+    - 'Tanium: Chrome Using SOCKS Proxy Tunneling via Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003
+  technique_name: OS Credential Dumping
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Reg SAM Access'
+    - 'Tanium: Rpcping Credential Capture Named Pipe'
+    - 'Tanium: Kekeo Command Arguments'
+    - 'Tanium: Reg Security Access'
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: Suspicious NTDSUtil Execution'
+    - 'Tanium: ProcDump Execution'
+    - 'Tanium: Nltest Execution'
+    - 'Tanium: CmdKey Cached Credential Discovery'
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    - 'Tanium: MSBuild loading Mimikatz'
+    - 'Tanium: Esentutl Retrieve Locked File with Volume Shadow Copy'
+    - 'Tanium: Rdrleakdiag Process Dump'
+    - 'Tanium: Rpcping Credential Capture Port'
+    - 'Tanium: RunDll Creating MiniDump'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1202
+  technique_name: Indirect Command Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: MSConfig Command Execution'
+    - 'Tanium: Conhost Spawned Executable'
+    - 'Tanium: Indirect Command Execution'
+    - 'Tanium: File Download with Desktopimgdownldr'
+    - 'Tanium: Indirect Command Execution Pcalua'
+    - 'Tanium: Command Quoted Directory Traversal Execution'
+    - 'Tanium: Indirect Command Execution AtBroker'
+    - 'Tanium: Ieexec Download and Execution'
+    - 'Tanium: Program Compatibility Assistant (PCALUA.EXE) Misuse'
+    - 'Tanium: Diskshadow Spawned Process'
+    - 'Tanium: Ie4uinit Binary Duplication'
+    - 'Tanium: Indirect Command Execution Bash'
+    - 'Tanium: Indirect Command Execution Forfiles'
+    - 'Tanium: Explorer Spawned Executable'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1137
+  technique_name: Office Application Startup
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Persistence via Office Application Startup'
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Office Applications Executing AppData Binaries'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1559
+  technique_name: Inter-Process Communication
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Office Applications Executing AppData Binaries'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1559.002
+  technique_name: 'Inter-Process Communication: Dynamic Data Exchange'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Office Applications Executing AppData Binaries'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1566
+  technique_name: Phishing
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Office Applications Executing AppData Binaries'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1566.001
+  technique_name: 'Phishing: Spearphishing Attachment'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Command Shell Launched by Office Applications'
+    - 'Tanium: Office Applications Executing AppData Binaries'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1055.001
+  technique_name: 'Process Injection: Dynamic-link Library Injection'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious System Management Automation Image Load'
+    - 'Tanium: NET CLR Artifact WMIC'
+    - 'Tanium: NET CLR Artifact Mshta'
+    - 'Tanium: Mavinject DLL Injection'
+    - 'Tanium: NET CLR Artifact Svchost'
+    - 'Tanium: NET CLR Artifact Regsvr32'
+    - 'Tanium: NET CLR Artifact Wscript'
+    - 'Tanium: NET CLR Artifact Cscript'
+    - 'Tanium: SharpPack Image Load'
+    - 'Tanium: Common Language Runtime Image Load'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1129
+  technique_name: Shared Modules
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious System Management Automation Image Load'
+    - 'Tanium: NET CLR Artifact WMIC'
+    - 'Tanium: PowerUp DLL Hijacking Attempt'
+    - 'Tanium: NET CLR Artifact Mshta'
+    - 'Tanium: NET CLR Artifact Svchost'
+    - 'Tanium: NET CLR Artifact Regsvr32'
+    - 'Tanium: NET CLR Artifact Wscript'
+    - 'Tanium: NET CLR Artifact Cscript'
+    - 'Tanium: Suspicious PowerShell Command Line'
+    - 'Tanium: SharpPack Image Load'
+    - 'Tanium: Common Language Runtime Image Load'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.001
+  technique_name: 'Signed Binary Proxy Execution: Compiled HTML File'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Compiled Help (CHM) Command Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.002
+  technique_name: 'Signed Binary Proxy Execution: Control Panel'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Indirect Command Execution'
+    - 'Tanium: Indirect Command Execution Pcalua'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Indirect Command Execution AtBroker'
+    - 'Tanium: Indirect Command Execution Bash'
+    - 'Tanium: Indirect Command Execution Forfiles'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.011
+  technique_name: 'Signed Binary Proxy Execution: Rundll32'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious JavaScript Execution'
+    - 'Tanium: Suspicious HTA Execution'
+    - 'Tanium: RunDll Creating MiniDump'
+    - 'Tanium: Meterpreter Privilege Escalation'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: Control Panel Items Shell32'
+    - 'Tanium: Dfsvc File Download'
+    - 'Tanium: Control Panel Items'
+    - 'Tanium: Powershell Images Loaded by rundll32.exe'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: RunDLL INF Script Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1556
+  technique_name: Modify Authentication Process
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Credential Leak Manipulation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1485
+  technique_name: Data Destruction
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Fsutil Deleting USN Journal'
+    - 'Tanium: Wbadmin Catalog Deletion'
+    - 'Tanium: Volume Shadow Copy Deletion'
+    - 'Tanium: Data Destruction SDelete'
+    - 'Tanium: Wbadmin System State Backup Deletion'
+    - 'Tanium: Vssadmin Resize Volume Shadow Copy'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1070
+  technique_name: Indicator Removal on Host
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Zone Identifier ADS Deletion'
+    - 'Tanium: Windows Event Logs Cleared'
+    - 'Tanium: Data Destruction SDelete'
+    - 'Tanium: PWSH Clear History'
+    - 'Tanium: Removing Windows Defender Signatures'
+    - 'Tanium: PowerShell Clear History'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1070.004
+  technique_name: 'Indicator Removal on Host: File Deletion'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Zone Identifier ADS Deletion'
+    - 'Tanium: Data Destruction SDelete'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1562.002
+  technique_name: 'Impair Defenses: Disable Windows Event Logging'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Disable Security Events with MiniNT Registry Key'
+    - 'Tanium: Disable PowerShell Session Event Tracing'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574
+  technique_name: Hijack Execution Flow
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: LSASS Registry DirectoryServiceExtPt DLL Load'
+    - 'Tanium: LSASS Registry LsaDbExtPt DLL Load'
+    - 'Tanium: Service Security Descriptor Persistence SCManager'
+    - 'Tanium: Dnscmd Remote DNS Server DLL Injection'
+    - 'Tanium: Windows Address Book Search Order Hijack'
+    - 'Tanium: ExtExport DLL Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: LD_PRELOAD via Profile Modification with sed'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.014
+  technique_name: 'Event Triggered Execution: Emond'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Emond Modification'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003.003
+  technique_name: 'OS Credential Dumping: NTDS'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious NTDSUtil Execution'
+    - 'Tanium: Esentutl Retrieve Locked File with Volume Shadow Copy'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1204.002
+  technique_name: 'User Execution: Malicious File'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Word Spawned Process Creating VBS Files'
+    - 'Tanium: Excel Web Query Execution'
+    - 'Tanium: Word Spawned Process Creating DLL Files'
+    - 'Tanium: Excel Spawned Process Creating DLL Files'
+    - 'Tanium: PowerPoint Spawned Connection to Port 80'
+    - 'Tanium: Excel Spawned Process Creating CMD Files'
+    - 'Tanium: Word Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Process Creating SYS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating CMD Files'
+    - 'Tanium: PowerPoint Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Process Creating VBS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating VBS Files'
+    - 'Tanium: Excel Spawned Process Creating EXE Files'
+    - 'Tanium: PowerPoint Spawned Process Creating BAT Files'
+    - 'Tanium: Excel Spawned Connection to Port 443'
+    - 'Tanium: Excel Spawned Connection to Port 80'
+    - 'Tanium: PowerPoint Spawned Process Creating PS1 Files'
+    - 'Tanium: Excel Spawned Process Creating PS1 Files'
+    - 'Tanium: Word Spawned Process Creating PS1 Files'
+    - 'Tanium: Word Spawned Process Creating EXE Files'
+    - 'Tanium: PowerPoint Spawned Process Creating SYS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating DLL Files'
+    - 'Tanium: Word Spawned Process Creating CMD Files'
+    - 'Tanium: Word Spawned Process Creating SYS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating EXE Files'
+    - 'Tanium: Word Spawned Process Creating BAT Files'
+    - 'Tanium: Excel Spawned Process Creating BAT Files'
+    - 'Tanium: Word Spawned Connection to Port 80'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.005
+  technique_name: 'Command and Scripting Interpreter: Visual Basic'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Word Spawned Process Creating VBS Files'
+    - 'Tanium: Scripts Created by Office Applications'
+    - 'Tanium: SyncAppVPublishingServer VBS Powershell Execution'
+    - 'Tanium: SyncAppVPublishingServer VBS Process Execution'
+    - 'Tanium: Suspicious VBScript Execution'
+    - 'Tanium: Excel Spawned Process Creating VBS Files'
+    - 'Tanium: PowerPoint Spawned Process Creating VBS Files'
+    - 'Tanium: Signed Script Proxy Execution Cscript WinRM'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.002
+  technique_name: 'Hijack Execution Flow: DLL Side-Loading'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: ExtExport DLL Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1555
+  technique_name: Credentials from Password Stores
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Extract Keychain Credentials'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Findstr Credential Harvesting'
+    - 'Tanium: Netsh Wifi Credentials Harvesting'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1555.001
+  technique_name: 'Credentials from Password Stores: Keychain'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Extract Keychain Credentials'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.010
+  technique_name: 'Hijack Execution Flow: Services File Permissions Weakness'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Service Security Descriptor Persistence SCManager'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1083
+  technique_name: File and Directory Discovery
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Folder Permission Enumeration'
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.006
+  technique_name: 'Command and Scripting Interpreter: Python'
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Python Load Shared Libraries'
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: TTY Terminal Spawned via Python'
+    - 'Tanium: Python Privilege Escalation'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: GDB Commands Reverse Shell'
+    - 'Tanium: Python Commands Exfil'
+    - 'Tanium: Python Commands Reverse Shell'
+    - 'Tanium: Shlayer Curl Activity Python'
+    - 'Tanium: Python Commands Download'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1553
+  technique_name: Subvert Trust Controls
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Gatekeeper Bypass'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1553.001
+  technique_name: 'Subvert Trust Controls: Gatekeeper Bypass'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Gatekeeper Bypass'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.012
+  technique_name: 'Event Triggered Execution: Image File Execution Options Injection'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: GlobalFlags Persistence'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1037
+  technique_name: Boot or Logon Initialization Scripts
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Group Policy Script Creation domainscripts'
+    - 'Tanium: Group Policy Script Creation ps1'
+    - 'Tanium: Group Policy Script Creation scripts'
+    - 'Tanium: Group Policy Script Creation js'
+    - 'Tanium: Group Policy Script Creation bat'
+    - 'Tanium: Group Policy Script Creation vbs'
+    - 'Tanium: Group Policy Script Creation hta'
+    - 'Tanium: Group Policy Script Creation vba'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1037.003
+  technique_name: 'Boot or Logon Initialization Scripts: Network Logon Script'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Group Policy Script Creation domainscripts'
+    - 'Tanium: Group Policy Script Creation ps1'
+    - 'Tanium: Group Policy Script Creation scripts'
+    - 'Tanium: Group Policy Script Creation js'
+    - 'Tanium: Group Policy Script Creation bat'
+    - 'Tanium: Group Policy Script Creation vbs'
+    - 'Tanium: Group Policy Script Creation hta'
+    - 'Tanium: Group Policy Script Creation vba'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1557
+  technique_name: Man-in-the-Middle
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    - 'Tanium: Hosts File Modification'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Hosts File Modification'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Hosts File Modification'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1033
+  technique_name: System Owner/User Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Session Enumeration pipelsarpc'
+    - 'Tanium: Windows Session Enumeration pipesvcctl'
+    - 'Tanium: IIS Worker Suspicious whoami Creation'
+    - 'Tanium: Windows Session Enumeration pipesamr'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1592
+  technique_name: Gather Victim Host Information
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: IIS Worker Suspicious whoami Creation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1040
+  technique_name: Network Sniffing
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Ip Enable Promiscuous Mode'
+    - 'Tanium: Ifconfig Enable Promiscuous Mode'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Netsh Network Traffic Capture'
+    - 'Tanium: Pktmon Full Packet Capture'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1127
+  technique_name: Trusted Developer Utilities Proxy Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Ilasm DLL Compilation'
+    - 'Tanium: Jsc Javascript Library Compilation'
+    - 'Tanium: Trusted Developer Utilities Proxy Execution'
+    - 'Tanium: Mavinject DLL Injection'
+    - 'Tanium: MSBuild Remote Execution'
+    - 'Tanium: Ilasm EXE complication'
+    - 'Tanium: Jsc Javascript Binary Compilation'
+    - 'Tanium: Microsoft Workflow Compiler Misuse'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.008
+  technique_name: 'Event Triggered Execution: Accessibility Features'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Image File Debugger Tampering DisplaySwitch'
+    - 'Tanium: Image File Debugger Tampering Osk'
+    - 'Tanium: Image File Debugger Tampering Narrator'
+    - 'Tanium: Image File Debugger Tampering Sethc'
+    - 'Tanium: Windows Accessibility Binary Replacement AtBroker'
+    - 'Tanium: Windows Accessibility Binary Replacement DisplaySwitch'
+    - 'Tanium: Windows Accessibility Binary Replacement Narrator'
+    - 'Tanium: Windows Accessibility Logon Bypasses'
+    - 'Tanium: Windows Accessibility Binary Replacement Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Osk'
+    - 'Tanium: Image File Debugger Tampering - Sticky Keys Attack'
+    - 'Tanium: Windows Accessibility Binary Replacement Utilman'
+    - 'Tanium: Image File Debugger Tampering Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Sethc'
+    - 'Tanium: Image File Debugger Tampering AtBroker'
+    - 'Tanium: Image File Debugger Tampering Utilman'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.004
+  technique_name: 'Signed Binary Proxy Execution: InstallUtil'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: InstallUtil AppLocker Bypass DLL'
+    - 'Tanium: InstallUtil AppLocker Bypass Executable'
+    - 'Tanium: Powershell Images Loaded by installutil.exe'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1550
+  technique_name: Use Alternate Authentication Material
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    - 'Tanium: Kekeo Command Arguments'
+    - 'Tanium: Kerberos File Manipulation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1550.002
+  technique_name: 'Use Alternate Authentication Material: Pass the Hash'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1557.001
+  technique_name: 'Man-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Internal Monologue NTLM Hash Theft'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1212
+  technique_name: Exploitation for Credential Access
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1550.003
+  technique_name: 'Use Alternate Authentication Material: Pass the Ticket'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Kerberos File Manipulation'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1552
+  technique_name: Unsecured Credentials
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Password Values in Registry'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1552.004
+  technique_name: 'Unsecured Credentials: Private Keys'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1558
+  technique_name: Steal or Forge Kerberos Tickets
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Kerberoasting'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1558.003
+  technique_name: 'Steal or Forge Kerberos Tickets: Kerberoasting'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Kerberoasting'
+    - 'Tanium: Kekeo Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.006
+  technique_name: 'Hijack Execution Flow: Dynamic Linker Hijacking'
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: LD_PRELOAD via Profile Modification with sed'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.011
+  technique_name: 'Hijack Execution Flow: Services Registry Permissions Weakness'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: LSASS Registry DirectoryServiceExtPt DLL Load'
+    - 'Tanium: LSASS Registry LsaDbExtPt DLL Load'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1071.001
+  technique_name: 'Application Layer Protocol: Web Protocols'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Lsass Connection to Port 80'
+    - 'Tanium: Lsass Connection to Port 443'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1036
+  technique_name: Masquerading
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Accessibility Binary Replacement AtBroker'
+    - 'Tanium: Lsass Running as not System'
+    - 'Tanium: Unsigned Process Modifying Files in Windows Directory'
+    - 'Tanium: Unsigned Process Creating a Binary'
+    - 'Tanium: Masquerading as Tanium Python'
+    - 'Tanium: Windows Accessibility Binary Replacement Narrator'
+    - 'Tanium: Windows Accessibility Binary Replacement Utilman'
+    - 'Tanium: Unsigned Process Creating a PowerShell Script'
+    - 'Tanium: Right-to-Left Override'
+    - 'Tanium: Masquerading as Tanium Client'
+    - 'Tanium: Windows Accessibility Binary Replacement DisplaySwitch'
+    - 'Tanium: Wininit Running as not System'
+    - 'Tanium: Windows Accessibility Binary Replacement Sethc'
+    - 'Tanium: Non Break Space Character'
+    - 'Tanium: Unsigned Process Creating a Driver'
+    - 'Tanium: Masquerading as Tanium Detect Engine'
+    - 'Tanium: Masquerading as Tanium Client Extension'
+    - 'Tanium: Windows Accessibility Binary Replacement Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Osk'
+    - 'Tanium: Unsigned Process Creating a Library'
+    - 'Tanium: Services Running as not System'
+    - 'Tanium: Masquerading as Tanium Endpoint Index'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Masquerading as Tanium Client (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Client Extension (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Python (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Detect Engine (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Endpoint Index (Linux and MacOS)'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Masquerading as Tanium Client (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Client Extension (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Python (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Detect Engine (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Endpoint Index (Linux and MacOS)'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1036.005
+  technique_name: 'Masquerading: Match Legitimate Name or Location'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Masquerading as Tanium Detect Engine'
+    - 'Tanium: Masquerading as Tanium Client'
+    - 'Tanium: Masquerading as Tanium Client Extension'
+    - 'Tanium: Masquerading as Tanium Python'
+    - 'Tanium: Windows Accessibility Binary Replacement DisplaySwitch'
+    - 'Tanium: Windows Accessibility Binary Replacement AtBroker'
+    - 'Tanium: Windows Accessibility Binary Replacement Narrator'
+    - 'Tanium: Lsass Running as not System'
+    - 'Tanium: Windows Accessibility Binary Replacement Magnify'
+    - 'Tanium: Windows Accessibility Binary Replacement Osk'
+    - 'Tanium: Wininit Running as not System'
+    - 'Tanium: Windows Accessibility Binary Replacement Utilman'
+    - 'Tanium: Windows Accessibility Binary Replacement Sethc'
+    - 'Tanium: Services Running as not System'
+    - 'Tanium: Masquerading as Tanium Endpoint Index'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Masquerading as Tanium Client (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Client Extension (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Python (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Detect Engine (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Endpoint Index (Linux and MacOS)'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Masquerading as Tanium Client (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Client Extension (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Python (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Detect Engine (Linux and MacOS)'
+    - 'Tanium: Masquerading as Tanium Endpoint Index (Linux and MacOS)'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1127.001
+  technique_name: 'Trusted Developer Utilities Proxy Execution: MSBuild'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Trusted Developer Utilities Proxy Execution'
+    - 'Tanium: MSBuild Remote Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003.001
+  technique_name: 'OS Credential Dumping: LSASS Memory'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: RunDll Creating MiniDump Function 24'
+    - 'Tanium: ProcDump Execution'
+    - 'Tanium: MSBuild loading Mimikatz'
+    - 'Tanium: Rdrleakdiag Process Dump'
+    - 'Tanium: RunDll Creating MiniDump'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003.002
+  technique_name: 'OS Credential Dumping: Security Account Manager'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: Reg Security Access'
+    - 'Tanium: MSBuild loading Mimikatz'
+    - 'Tanium: Reg SAM Access'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003.004
+  technique_name: 'OS Credential Dumping: LSA Secrets'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: MSBuild loading Mimikatz'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1003.005
+  technique_name: 'OS Credential Dumping: Cached Domain Credentials'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    - 'Tanium: MSBuild loading Mimikatz'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.007
+  technique_name: 'Signed Binary Proxy Execution: Msiexec'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: MSIExec Remote Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1098
+  technique_name: Account Manipulation
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1134
+  technique_name: Access Token Manipulation
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1134.005
+  technique_name: 'Access Token Manipulation: SID-History Injection'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1207
+  technique_name: Rogue Domain Controller
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1547
+  technique_name: Boot or Logon Autostart Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1547.005
+  technique_name: 'Boot or Logon Autostart Execution: Security Support Provider'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1552.001
+  technique_name: 'Unsecured Credentials: Credentials In Files'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Mimikatz Command Arguments'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1518
+  technique_name: Software Discovery
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Minifilter Driver Enumeration'
+    - 'Tanium: WMIC Antivirus Discovery'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1518.001
+  technique_name: 'Software Discovery: Security Software Discovery'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Minifilter Driver Enumeration'
+    - 'Tanium: WMIC Antivirus Discovery'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.007
+  technique_name: 'Event Triggered Execution: Netsh Helper DLL'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Netsh Helper DLL'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1021
+  technique_name: Remote Services
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: RDP Enabled via Registry Modification'
+    - 'Tanium: Remote Service Creation'
+    - 'Tanium: RDP Tunneling with Fast Reverse Proxy'
+    - 'Tanium: Netsh Port Forwarding'
+    - 'Tanium: RDP Tunneling with Chisel'
+    - 'Tanium: RDP Tunneling with plink'
+    - 'Tanium: RDP Tunneling'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1090.001
+  technique_name: 'Proxy: Internal Proxy'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Netsh Port Forwarding'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1090.003
+  technique_name: 'Proxy: Multi-hop Proxy'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Netsh Port Forwarding'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1552.002
+  technique_name: 'Unsecured Credentials: Credentials in Registry'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Password Values in Registry'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1221
+  technique_name: Template Injection
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1137.001
+  technique_name: 'Office Application Startup: Office Template Macros'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1137.006
+  technique_name: 'Office Application Startup: Add-ins'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Persistence using Office Templates and Trusts'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1137.002
+  technique_name: 'Office Application Startup: Office Test'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Persistence via Office Application Startup'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1123
+  technique_name: Audio Capture
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Silent Audio Capture via SoundRecorder'
+    - 'Tanium: PowerShell Audio Capture'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1056
+  technique_name: Input Capture
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: PowerShell Prompted For User Credentials'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1505
+  technique_name: Server Software Component
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: PowerShell Using PowerCat'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1505.003
+  technique_name: 'Server Software Component: Web Shell'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: PowerShell Using PowerCat'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.009
+  technique_name: 'Signed Binary Proxy Execution: Regsvcs/Regasm'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Powershell Images Loaded by regsvcs.exe'
+    - 'Tanium: Uncommon RegSvcs & RegAsm Script Execution'
+    - 'Tanium: Powershell Images Loaded by regasm.exe'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.010
+  technique_name: 'Signed Binary Proxy Execution: Regsvr32'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Powershell Images Loaded by regsvr32.exe'
+    - 'Tanium: Suspicious Network Connections from Windows Processes'
+    - 'Tanium: REGSVR32 Script Component Runtime Misuse'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1021.001
+  technique_name: 'Remote Services: Remote Desktop Protocol'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: RDP Enabled via Registry Modification'
+    - 'Tanium: RDP Tunneling with Fast Reverse Proxy'
+    - 'Tanium: RDP Tunneling with Chisel'
+    - 'Tanium: RDP Tunneling with plink'
+    - 'Tanium: RDP Tunneling'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1036.002
+  technique_name: 'Masquerading: Right-to-Left Override'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Right-to-Left Override'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1546.011
+  technique_name: 'Event Triggered Execution: Application Shimming'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: SDB Install Using Sdbinst'
+    - 'Tanium: Shim Database Persistence'
+    - 'Tanium: SDB Install Using Sdb Explorer'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.005
+  technique_name: 'Hijack Execution Flow: Executable Installer File Permissions Weakness'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: SUID or GUID Enumeration'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1068
+  technique_name: Exploitation for Privilege Escalation
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Security Trampoline Privilege Escalation'
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: TCPDump Commands Privilege Escalation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1548.004
+  technique_name: 'Abuse Elevation Control Mechanism: Elevated Execution with Prompt'
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Security Trampoline Privilege Escalation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1136
+  technique_name: Create Account
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Set Password to Never Expire via chage'
+    - 'Tanium: Set Password to Never Expire via passwd'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: User Added to Local Administrators'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1136.001
+  technique_name: 'Create Account: Local Account'
+  detection:
+  - applicable_to:
+    - linux endpoints
+    location:
+    - 'Tanium: Set Password to Never Expire via chage'
+    - 'Tanium: Set Password to Never Expire via passwd'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: User Added to Local Administrators'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1140
+  technique_name: Deobfuscate/Decode Files or Information
+  detection:
+  - applicable_to:
+    - macos endpoints
+    location:
+    - 'Tanium: Shlayer Openssl Suspicious Decoding'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Certificate Utility Misuse'
+    - 'Tanium: Suspicious PowerShell Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1216
+  technique_name: Signed Script Proxy Execution
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Signed Script Proxy Execution Cscript WinRM'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1059.007
+  technique_name: 'Command and Scripting Interpreter: JavaScript'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious JavaScript Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1132
+  technique_name: Data Encoding
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Suspicious PowerShell Command Line'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1047
+  technique_name: Windows Management Instrumentation
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Firewall Disabled'
+    - 'Tanium: Windows Remote Shell Command Execution'
+    - 'Tanium: Windows Event Logs Cleared'
+    - 'Tanium: Volume Shadow Copy Deletion'
+    - 'Tanium: WMIC Antivirus Discovery'
+    - 'Tanium: WMIC Process Creation'
+    - 'Tanium: WMI Managed Object Format Execution'
+    - 'Tanium: Suspicious PowerShell Launched by WMI'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1563
+  technique_name: Remote Service Session Hijacking
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Tscon RDP Session Hijack'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1563.002
+  technique_name: 'Remote Service Session Hijacking: RDP Hijacking'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Tscon RDP Session Hijack'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1218.003
+  technique_name: 'Signed Binary Proxy Execution: CMSTP'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Uncommon INF Script Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1220
+  technique_name: XSL Script Processing
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Uncommon XSL Script Execution'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1036.001
+  technique_name: 'Masquerading: Invalid Code Signature'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Unsigned Process Creating a Driver'
+    - 'Tanium: Unsigned Process Modifying Files in Windows Directory'
+    - 'Tanium: Unsigned Process Creating a Binary'
+    - 'Tanium: Unsigned Process Creating a Library'
+    - 'Tanium: Unsigned Process Creating a PowerShell Script'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1055.012
+  technique_name: 'Process Injection: Process Hollowing'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Werfault with Suspicious Command Invocation'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1574.001
+  technique_name: 'Hijack Execution Flow: DLL Search Order Hijacking'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Address Book Search Order Hijack'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
+- technique_id: T1562.004
+  technique_name: 'Impair Defenses: Disable or Modify System Firewall'
+  detection:
+  - applicable_to:
+    - windows endpoints
+    location:
+    - 'Tanium: Windows Firewall Disabled'
+    comment: ''
+    score_logbook:
+    - date: 2021-06-03 10:13:18.762461
+      score: 1
+      comment: ''
+  visibility:
+  - applicable_to:
+    - all
+    comment: ''
+    score_logbook:
+    - date: 
+      score: 0
+      comment: ''
+      auto_generated: true
